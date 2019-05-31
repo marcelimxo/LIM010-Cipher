@@ -6,8 +6,6 @@ El monitoreo de las redes sociales y sitios web de noticias son prácticas usada
 > En Venezuela, los agentes represores y simpatizantes con el régimen se
 > hacen llamar **chavistas**, de ahí nace el nombre.
 
-A través de esta aplicación podemos cifrar y descifrar texto con el fin de burlar la censura, 
-
 El objetivo de **ACAB CIPHER** es brindarle a la ciudadanía una herramienta fácil y segura para que puedan compartir información a través de los medios digitales de manera cifrada con la finalidad de burlar cualquier tipo de censura que pueda originar algún tipo de persecución hacia su persona.
 
 Para usar **ACAB CIPHER** debes ingresar con una contraseña especial, y si la colocas correctamente, podrás seleccionar entre dos opciones, cifrar y descifrar texto. Despues de elegir que quieres hacer, debes ingresar el número de cifrado(cantidad de desplazamiento que tendran las letras) que quieras usar y a continuación el texto, luego haciendo click en el boton cifrar/descifrar tu mensaje aparecerá al lado derecho según corresponda. Puedes resetear, para escribir nuevamente o puedes copiar el resultado cifrado/descifrado.
