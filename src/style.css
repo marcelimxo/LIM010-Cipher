@@ -1,1 +1,10 @@
-/* Acá va tu código */
+header {
+    font-family: 'Alfa Slab One', cursive;
+    font-size: 48px;
+  }
+
+h3 {
+    font-family: 'Teko', sans-serif;
+}
+
+p{font-family: 'Roboto Slab', serif;} 
