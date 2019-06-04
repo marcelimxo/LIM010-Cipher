@@ -64,3 +64,14 @@ options.addEventListener('change', (e) => {
    } else {
      console.log('gracias =)');}
 })
+
+
+const range = document.querySelector('#myRange');
+const field = document.getElementById('num1');
+
+range.addEventListener('input', (e) => {
+  field.value = e.target.value;
+});
+field.addEventListener('input', (e) => {
+  range.value = e.target.value;
+});

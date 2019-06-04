@@ -1,71 +1,133 @@
 header {
-    font-family: 'Alfa Slab One', cursive;
-    font-size: 48px;
-    letter-spacing: 0.1em;
-  }
+  font-family: 'Alfa Slab One', cursive;
+  font-size: 1.7em;
+  letter-spacing: 0.1em;
+}
 
 .teko {
-    font-family: 'Teko', sans-serif;
+  font-family: 'Teko', sans-serif;
+  font-size: 1em;
 }
 
 .roboto{
-    text-align: center;
-    font-family: 'Roboto Slab', serif;} 
+  text-align: center;
+  font-family: 'Roboto Slab', serif;} 
 
 span {
-  font-size: 0.7em;
+font-size: 0.7em;
 }
 
 #loginContainer {
-  width: 100%;
+width: 100%;
 }
 
 #login {
-  width: 50%;
-  margin: 0 auto;
-  background-color: darkgray;
-  padding-top: 100px;
-  padding-bottom: 100px;
-  border-width:5px;  
-    border-style:dashed;
-    border-color: dimgray;
+width: 50%;
+margin: 0 auto;
+background-color: darkgray;
+padding-top: 100px;
+padding-bottom: 100px;
+border-width:5px;  
+  border-style:dashed;
+  border-color: dimgray;
 }
 
 .modal{
-  width: 300px;
-  height: 300px;
-  background: white;
-  position: absolute;
-  z-index: 5;
-  margin: 0 auto;
-  left: 0;
-  right: 0;
-  top: 50%;
+width: 300px;
+height: 300px;
+background: white;
+position: absolute;
+z-index: 5;
+margin: 0 auto;
+left: 0;
+right: 0;
+top: 50%;
 }
 
 .overlay{
-  background: black;
-  opacity: 0.5;
+background: black;
+opacity: 0.5;
+width: 100%;
+height: 100%;
+padding: 0;
+margin: 0;
+z-index: 4;
+position: absolute;
+bottom: 0;
+left: 0;
+}
+
+
+.slidecontainer {
+width: 100%; /* Width of the outside container */
+}
+
+/* The slider itself */
+.slider {
+-webkit-appearance: none;  /* Override default CSS styles */
+appearance: none;
+width: 20%; /* Full-width */
+height: 5px; /* Specified height */
+background: #d3d3d3; /* Grey background */
+outline: none; /* Remove outline */
+opacity: 0.7; /* Set transparency (for mouse-over effects on hover) */
+-webkit-transition: .2s; /* 0.2 seconds transition on hover */
+transition: opacity .2s;
+border-radius: 1em/5em;
+}
+
+/* Mouse-over effects */
+.slider:hover {
+opacity: 1; /* Fully shown on mouse-over */
+}
+
+/* The slider handle (use -webkit- (Chrome, Opera, Safari, Edge) and -moz- (Firefox) to override default look) */ 
+.slider::-webkit-slider-thumb {
+-webkit-appearance: none; /* Override default look */
+appearance: none;
+width: 15px; /* Set a specific slider handle width */
+height: 15px; /* Slider handle height */
+background: #4f5763; /* Green background */
+cursor: pointer; /* Cursor on hover */
+border-radius: 1em/5em;
+}
+
+.slider::-moz-range-thumb {
+width: 15px; /* Set a specific slider handle width */
+height: 15px; /* Slider handle height */
+background: #4f5763; /* Green background */
+cursor: pointer; /* Cursor on hover */
+border-radius: 1em/5em;
+}
+
+#num1 {
+  width: 30px;
+  border-radius: 0.1em/0.1em;
+}
+
+#cifrar{
   width: 100%;
-  height: 100%;
-  padding: 0;
-  margin: 0;
-  z-index: 4;
-  position: absolute;
-  bottom: 0;
-  left: 0;
 }
 
 /* clases que hacen cosas constantemente */
 
 .error{
-  border: 1px solid red;
+border: 1px solid red;
 }
 
 .hide{
-  display: none !important;
+display: none !important;
 }
 
 .show{
-  display: block !important;
+display: block !important;
+}
+
+.texto{
+  width: 35%;
+  height: 200px;
+}
+
+.inline{
+  display: inline;
 }
