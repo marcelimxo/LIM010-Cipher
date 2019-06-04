@@ -4,16 +4,31 @@ header {
     letter-spacing: 0.1em;
   }
 
-h3 {
+.teko {
     font-family: 'Teko', sans-serif;
 }
 
-p, form{
+.roboto{
     text-align: center;
     font-family: 'Roboto Slab', serif;} 
 
 span {
   font-size: 0.7em;
+}
+
+#loginContainer {
+  width: 100%;
+}
+
+#login {
+  width: 50%;
+  margin: 0 auto;
+  background-color: darkgray;
+  padding-top: 100px;
+  padding-bottom: 100px;
+  border-width:5px;  
+    border-style:dashed;
+    border-color: dimgray;
 }
 
 .modal{

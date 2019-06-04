@@ -19,10 +19,17 @@ const check = (e) => {
       const description = document.getElementById('description')
       description.classList.add('hide')
 
+      const opt = document.getElementById('op')
+
+      opt.classList.replace('hide', 'show')
+
     } else {
+
+      pswrd.classList.add('error')
+
       if (fails < 2) {
         // si tiene menos de 3 intentos entra aqui
-        pswrd.classList.add('error')
+        
         const error_pswrd = document.getElementById('error_pswrd');
             error_pswrd.classList.replace('hide', 'show');
 
@@ -41,9 +48,19 @@ const check = (e) => {
         overlay.classList.replace('hide', 'show')
       }
     }
-  } else {
-    
-  }
+  } else { 
+}
 }
 
 form.addEventListener('submit', check);
+
+//opciones
+
+const options = document.getElementById('options');
+
+options.addEventListener('change', (e) => {
+   if(e.target.value === 'Cifrar'){
+     console.log('hola');
+   } else {
+     console.log('gracias =)');}
+})

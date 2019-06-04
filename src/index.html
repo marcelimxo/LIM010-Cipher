@@ -7,15 +7,16 @@
   <link rel='stylesheet' href='style.css' />
   <link href='https://fonts.googleapis.com/css?family=Alfa+Slab+One|Roboto+Slab|Teko:600&display=swap' rel='stylesheet'>
 </head>
-
 <body>
   <header>
     <h1 id='title'>ACAB CIPHER</h1>
-    <h3 id='description'> Esta aplicacion te sirve para cifrar noticias o mensajes para evitar la censura </h3>
+    <h3 id='description' class="teko"> Esta aplicacion te sirve para cifrar noticias o mensajes para evitar la censura </h3>
   </header>
   <main>
 
-    <div id='loginContainer'>
+    <section id='loginContainer' class="roboto">
+
+      <div id="login">
 
       <form name='login' id='form'>
         <label for='pswrd'>Ingresa tu contraseña secreta</label><br>
@@ -27,10 +28,19 @@
       <div id='error' class='modal hide'> 
         <p> Ya utilizaste todos tus intentos, en este momento no podrás ingresar. </p> </div>
       <div id='overlay' class='overlay hide'></div>
-
     </div>
+    </section>
 
-  </main>
+    <div id="op" class="hide">
+      <label for="options" class="roboto"> ¿Qué quieres hacer? </label>
+        <select id="options" class="roboto">
+            <option value="" disabled selected>Elige</option>
+            <option value="Cifrar" id="cifrar_op">Cifrar</option>
+            <option value="Descifrar" id="descifrar_op">Descifrar</option>
+          </select>
+    </div> 
+
+   </main>
   <footer></footer>
   <script src='cipher.js'></script>
   <script src='index.js'></script>
