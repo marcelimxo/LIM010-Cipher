@@ -17,7 +17,7 @@
   </header>
   <main>
 
-    <section id='loginContainer' class="roboto hide">
+    <section id='loginContainer' class="roboto">
 
       <div id="login">
 
@@ -35,7 +35,7 @@
       </div>
     </section>
 
-    <div id="op" class="flex">
+    <div id="op" class="flex hide">
       <label for="options" class="roboto"> ¿Qué quieres hacer? </label>
       <select id="options" class="roboto">
         <option value="" disabled selected>Elige</option>
@@ -44,7 +44,7 @@
       </select>
     </div>
 
-    <section id="cifrar">
+    <section id="cifrando" class="hide">
 
       <div id="slide" class="flex">
         <label class="roboto"> Indica el nivel de cifrado </label>
@@ -59,19 +59,20 @@
 
         <div class="newText">
           <label for="cifrar" class="roboto">Ingresa tu texto aquí</label> <br>
-          <input type="text" name="cifrar" placeholder="Escribe aquí" class="texto"><br>
-          <button type="reset"> reset </button>
+          <textarea id="textoCifrar" name="cifrar" placeholder="Escribe aquí" class="texto"></textarea> <br>
+          <button type="reset" id="resetCifrar"> reset </button>
         </div>
 
         <div class="btnAction">
-          <button type="submit"> cifrar </button>
+          <button type="submit" id="cifrar"> cifrar </button>
         </div>
 
         <div class="textResult">
           <label for="cifrarResultado" class="roboto">Tu mensaje descifrado</label> <br>
-          <input type="text" name="cifrarResultado" placeholder="Tu resultado" class="texto" readonly>
+          <textarea id="textoResultadoCifrar" name="cifrarResultado" placeholder="Tu resultado" class="texto" readonly></textarea>
           <br>
-          <button type="button"> copiar </button>
+          <button type="button" id="copiarCifrado"> copiar </button><br>
+          <span class="hide" id="copiarCifrado_span">¡Copiado con exito!</span>
 
         </div>
 

@@ -60,11 +60,15 @@ const options = document.getElementById('options');
 
 options.addEventListener('change', (e) => {
    if(e.target.value === 'Cifrar'){
-     console.log('hola');
+    
+    const encodeSection = document.getElementById('cifrando');
+    encodeSection.classList.replace('hide', 'show');
+    
    } else {
      console.log('gracias =)');}
 })
 
+/* slider */
 
 const range = document.querySelector('#myRange');
 const field = document.getElementById('num1');
@@ -75,3 +79,35 @@ range.addEventListener('input', (e) => {
 field.addEventListener('input', (e) => {
   range.value = e.target.value;
 });
+
+/* Cifrando y mostrando */
+
+const textoCifrar = document.getElementById('textoCifrar');
+const textoResultadoCifrar = document.getElementById('textoResultadoCifrar');
+
+const btnCifrar = document.getElementById('cifrar');
+btnCifrar.addEventListener('click', () => {
+  const textoCifrado = window.cipher.encode(field.value,textoCifrar.value)
+  
+  textoResultadoCifrar.value = textoCifrado;
+
+})
+
+/* reset en cifrar */
+
+const btnResetCifrar = document.getElementById('resetCifrar');
+btnResetCifrar.addEventListener('click', ()=> {
+  textoCifrar.value = '';
+} )
+
+/* copiar en cifrar */
+
+const btnCopiarCifrado = document.getElementById('copiarCifrado');
+btnCopiarCifrado.addEventListener('click', () => {
+  textoResultadoCifrar.select();
+  document.execCommand('Copy');
+
+  const copiar = document.getElementById('copiarCifrado_span');
+            copiar.classList.toggle('hide');
+
+} )
