@@ -59,25 +59,36 @@ form.addEventListener('submit', check);
 const options = document.getElementById('options');
 
 options.addEventListener('change', (e) => {
+
+  const encodeSection = document.getElementById('cifrando');
+  const decodeSection = document.getElementById('descifrando');
+
    if(e.target.value === 'Cifrar'){
-    
-    const encodeSection = document.getElementById('cifrando');
+
     encodeSection.classList.replace('hide', 'show');
-    
-   } else {
-     console.log('gracias =)');}
+    decodeSection.classList.replace('show','hide');    
+
+   } else if(e.target.value === 'Descifrar'){
+
+    decodeSection.classList.replace('hide', 'show');
+    encodeSection.classList.replace('show','hide');   
+
+   }else 
+   {console.log('gracias =)');}
 })
+
+// sección cifrar
 
 /* slider */
 
-const range = document.querySelector('#myRange');
-const field = document.getElementById('num1');
+const rangeCifrar = document.querySelector('#rangeCifrar');
+const fieldCifrar = document.getElementById('numCifrar');
 
-range.addEventListener('input', (e) => {
-  field.value = e.target.value;
+rangeCifrar.addEventListener('input', (e) => {
+  fieldCifrar.value = e.target.value;
 });
-field.addEventListener('input', (e) => {
-  range.value = e.target.value;
+fieldCifrar.addEventListener('input', (e) => {
+  rangeCifrar.value = e.target.value;
 });
 
 /* Cifrando y mostrando */
@@ -87,7 +98,7 @@ const textoResultadoCifrar = document.getElementById('textoResultadoCifrar');
 
 const btnCifrar = document.getElementById('cifrar');
 btnCifrar.addEventListener('click', () => {
-  const textoCifrado = window.cipher.encode(field.value,textoCifrar.value)
+  const textoCifrado = window.cipher.encode(fieldCifrar.value,textoCifrar.value)
   
   textoResultadoCifrar.value = textoCifrado;
 
@@ -98,6 +109,8 @@ btnCifrar.addEventListener('click', () => {
 const btnResetCifrar = document.getElementById('resetCifrar');
 btnResetCifrar.addEventListener('click', ()=> {
   textoCifrar.value = '';
+  rangeCifrar.value = 1;
+  fieldCifrar.value = 1;
 } )
 
 /* copiar en cifrar */
@@ -108,6 +121,55 @@ btnCopiarCifrado.addEventListener('click', () => {
   document.execCommand('Copy');
 
   const copiar = document.getElementById('copiarCifrado_span');
-            copiar.classList.toggle('hide');
+  copiar.classList.toggle('hide');
 
+})
+
+// sección descifrar
+
+/* slider */
+
+const rangeDescifrar = document.querySelector('#rangeDescifrar');
+const fieldDescifrar = document.getElementById('numDescifrar');
+
+rangeDescifrar.addEventListener('input', (e) => {
+  fieldDescifrar.value = e.target.value;
+});
+fieldDescifrar.addEventListener('input', (e) => {
+  rangeDescifrar.value = e.target.value;
+});
+
+/* Descifrando y mostrando */
+
+const textoDescifrar = document.getElementById('textoDescifrar');
+const textoResultadoDescifrar = document.getElementById('textoResultadoDescifrar');
+
+const btnDescifrar = document.getElementById('descifrar');
+btnDescifrar.addEventListener('click', () => {
+  const textoDescifrado = window.cipher.decode(fieldDescifrar.value,textoDescifrar.value)
+  
+  textoResultadoDescifrar.value = textoDescifrado;
+
+})
+
+/* reset en cifrar */
+
+const btnResetDescifrar = document.getElementById('resetDescifrar');
+btnResetCifrar.addEventListener('click', ()=> {
+  textoCifrar.value = '';
+  rangeCifrar.value = 1;
+  fieldCifrar.value = 1;
 } )
+
+/* copiar en cifrar */
+
+const btnCopiarDescifrado = document.getElementById('copiarDescifrado');
+btnCopiarDescifrado.addEventListener('click', () => {
+  textoResultadoDescifrar.select();
+  document.execCommand('Copy');
+
+  const copiar = document.getElementById('copiarDescifrado_span');
+  copiar.classList.toggle('hide');
+
+})
+

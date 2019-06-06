@@ -34,7 +34,7 @@ border-width:5px;
   border-color: dimgray;
 }
 
-#slide{
+#slideCifrar,#slideDescifrar{
   padding: 2em 1em;
 }
 
@@ -110,12 +110,12 @@ cursor: pointer; /* Cursor on hover */
 border-radius: 1em/5em;
 }
 
-#num1 {
+#numCifrar,#numDescifrar {
   width: 30px;
   border-radius: 0.1em/0.1em;
 }
 
-#cifrando{
+#cifrando,#descifrando{
   width: 100%;
 }
 
