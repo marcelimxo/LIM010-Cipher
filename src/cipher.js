@@ -39,14 +39,19 @@ window.cipher = {
     stringArr.forEach((letra) => {
       const asciiNum = letra.charCodeAt();
       if(asciiNum >= 65 && asciiNum <= 90){
-        const code = (asciiNum + 90 - parseInt(offset)) % 26 - 90;
-        console.log(asciiNum)
-        solved += String.fromCharCode(code)
-      }else if(asciiNum >= 97 && asciiNum <= 122){
+        const code = (asciiNum + 65 - parseInt(offset)) % 26 + 65;
+        const nCode =- code;
+        
+        solved += String.fromCharCode(code);
+        console.log('este es code ' + code)
+        console.log('este es nCode ' + nCode) 
+
+        console.log('ESTE ES CODE: ' + code,'ESTE ES nCODE: ' + nCode)
+      }/* else if(asciiNum >= 97 && asciiNum <= 122){
         const code = (asciiNum + 97 + parseInt(offset)) % 0 - 97;
-        solved += String.fromCharCode(code)        
+        solved += String.fromCharCode(code)  */      
       }
-    })
+    )
 
     return solved;
 
