@@ -98,10 +98,8 @@ const textoResultadoCifrar = document.getElementById('textoResultadoCifrar');
 
 const btnCifrar = document.getElementById('cifrar');
 btnCifrar.addEventListener('click', () => {
-  const textoCifrado = window.cipher.encode(fieldCifrar.value,textoCifrar.value);
-  
+  const textoCifrado = window.cipher.encode(fieldCifrar.value,textoCifrar.value);  
   textoResultadoCifrar.value = textoCifrado;
-
 })
 
 /* reset en cifrar */
