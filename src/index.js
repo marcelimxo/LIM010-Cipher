@@ -1,30 +1,22 @@
-const checkLogin = document.getElementById('checkLogin');
+//const checkLogin = document.getElementById('checkLogin');
 const pswrd = document.getElementById('pswrd');
 const form = document.getElementById('form');
-
 const correct_pswrd = 'LABORATORIA';
 
 //contador de errores
 let fails = 0;
-
 const check = (e) => {
   //con preventDefault evito que el form haga cosas por defecto en el submit, como por ejemplo, agregar los valores en la url
   e.preventDefault()
-
   if (pswrd.value.length > 0) {
     if (pswrd.value === correct_pswrd) {
       const loginContainer = document.getElementById('loginContainer')
       loginContainer.remove();
-
       const description = document.getElementById('description')
       description.classList.add('hide')
-
       const opt = document.getElementById('op')
-
       opt.classList.replace('hide', 'show')
-
     } else {
-
       pswrd.classList.add('error')
 
       if (fails < 2) {
@@ -48,34 +40,24 @@ const check = (e) => {
         overlay.classList.replace('hide', 'show')
       }
     }
-  } else { 
-}
+  }
 }
 
 form.addEventListener('submit', check);
 
 //opciones
-
 const options = document.getElementById('options');
-
 options.addEventListener('change', (e) => {
-
   const encodeSection = document.getElementById('cifrando');
   const decodeSection = document.getElementById('descifrando');
-
-   if(e.target.value === 'Cifrar'){
-
+  if(e.target.value === 'Cifrar'){
     encodeSection.classList.replace('hide', 'show');
     decodeSection.classList.replace('show','hide');    
-
    } else if(e.target.value === 'Descifrar'){
-
     decodeSection.classList.replace('hide', 'show');
     encodeSection.classList.replace('show','hide');   
-
-   }else 
-   {console.log('gracias =)');}
-})
+   }
+  });
 
 // sección cifrar
 
