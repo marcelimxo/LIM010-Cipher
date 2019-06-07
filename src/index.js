@@ -98,7 +98,7 @@ const textoResultadoCifrar = document.getElementById('textoResultadoCifrar');
 
 const btnCifrar = document.getElementById('cifrar');
 btnCifrar.addEventListener('click', () => {
-  const textoCifrado = window.cipher.encode(fieldCifrar.value,textoCifrar.value)
+  const textoCifrado = window.cipher.encode(fieldCifrar.value,textoCifrar.value);
   
   textoResultadoCifrar.value = textoCifrado;
 
@@ -152,13 +152,13 @@ btnDescifrar.addEventListener('click', () => {
 
 })
 
-/* reset en cifrar */
+/* reset en descifrar */
 
 const btnResetDescifrar = document.getElementById('resetDescifrar');
-btnResetCifrar.addEventListener('click', ()=> {
-  textoCifrar.value = '';
-  rangeCifrar.value = 1;
-  fieldCifrar.value = 1;
+btnResetDescifrar.addEventListener('click', ()=> {
+  textoDescifrar.value = '';
+  rangeDescifrar.value = 1;
+  fieldDescifrar.value = 1;
 } )
 
 /* copiar en cifrar */
