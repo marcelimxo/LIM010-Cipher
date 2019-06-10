@@ -1,5 +1,6 @@
 //const checkLogin = document.getElementById('checkLogin');
 const pswrd = document.getElementById('pswrd');
+const name = document.getElementById('name');
 const form = document.getElementById('form');
 const correct_pswrd = 'LABORATORIA';
 
