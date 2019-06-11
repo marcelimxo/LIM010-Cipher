@@ -1,8 +1,9 @@
 <!DOCTYPE html>
-<html>
+<html lang="es">
 
 <head>
   <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Caesar Cipher</title>
   <link rel="stylesheet" href="style.css" />
   <link href="https://fonts.googleapis.com/css?family=Alfa+Slab+One|Roboto|Teko&display=swap" rel="stylesheet">
@@ -18,15 +19,16 @@
   </header>
   <main>
     <section id="all">
-      <section id="loginContainer" class="hide roboto">
+      <section id="loginContainer" class="roboto">
 
         <div id="login">
 
           <form name="login" id="form">
-            <label for="pswrd"> Ingresa tu contraseña secreta </label>
-            <input type="password" name="pswrd" id="pswrd" placeholder="Tu contraseña" autocomplete="current-password"><br>
+            <label for="pswrd"> Ingresa tu contraseña secreta </label> <br> <br>
+            <input type="password" name="pswrd" id="pswrd" placeholder="Tu contraseña"
+              autocomplete="current-password"><br>
             <span class="hide" id="error_pswrd">Error, intenta nuevamente.</span>
-            <input type="submit" class="btn" id="checkLogin" value="Ingresa">
+            <button type="submit" class="btn" id="checkLogin">Ingresa</button>
 
           </form>
 
@@ -37,7 +39,7 @@
         </div>
       </section>
 
-      <div id="op" class="flex show">
+      <div id="op" class="flex hide">
         <p id="saludo" class="roboto"></p>
         <br>
         <label for="options" class="roboto"> ¿Qué quieres hacer? </label>
@@ -48,7 +50,7 @@
         </select>
       </div>
 
-      <section id="cifrando" class="show">
+      <section id="cifrando" class="hide">
 
         <div id="slideCifrar" class="flex">
           <label class="roboto"> Indica el nivel de cifrado </label>
@@ -123,7 +125,9 @@
       </section>
     </section>
     <footer>
-      <p class="teko">Hecho por Marcelim</p>
+      <p class="teko">Hecho por Marcelim Rondón <a href="https://twitter.com/marcelimxo" target="_blank"><img
+            src="http://fc00.deviantart.net/fs70/f/2011/350/c/6/ditto_yay_by_tioluko-d4jaqe3.gif" alt="television"></a>
+      </p>
     </footer>
   </main>
   <script src="cipher.js"></script>
