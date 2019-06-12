@@ -33,8 +33,13 @@ window.cipher = {
 			if (asciiNum >= 65 && asciiNum <= 90) {
 				const code = (asciiNum + 65 - parseInt(offset)) % 26 + 65;
 				solved += String.fromCharCode(code);
-			} else if (asciiNum >= 97 && asciiNum <= 122) {
-				const code = (asciiNum + 97 + parseInt(offset)) % 26 + 97;
+			} else if (asciiNum >= 97 && asciiNum <= 111) {
+				const code = ((asciiNum + 97 - parseInt(offset)) % 26 + 97)-12;
+				solved += String.fromCharCode(code);
+			} else if (asciiNum >= 111 && asciiNum <= 122){
+				const code = ((asciiNum + 97 - parseInt(offset)) % 26 + 97)-12+26;
+				// eslint-disable-next-line no-console
+				console.log('este es el numero ascii ' + asciiNum, 'y ese es el numero de la formula ' + code)
 				solved += String.fromCharCode(code);
 			} else if (asciiNum === 32) {
 				solved += ' ';

@@ -3,8 +3,9 @@ body {
 }
 h1 {
   font-family: "Alfa Slab One", cursive;
-  color: #9b2915;
-  text-shadow: 1px 1px 2px #fff23d;
+  color: #b31b00;
+  text-shadow: 1px 1px 2px #ffff3d;
+  font-weight: lighter;
 }
 main {
   position: relative;
@@ -64,29 +65,54 @@ button#descifrar {
   transition: 1s;
 }
 
+button#descifrar {
+  background: linear-gradient(135deg, #44913b 0%, #31662b 100%);
+  padding-left: 6px;
+  padding-right: 6px;
+  transition: 0.3s;
+}
+
+button#descifrar:active {
+  background: linear-gradient(135deg, #44913b 0%, #31662b 100%);
+  transition: 0.3s;
+}
+
+button#descifrar:hover {
+  background: linear-gradient(135deg, #44913b 0%, #31662b 100%);
+  transition: 0.3s;
+}
+
 button#cifrar {
   background: linear-gradient(135deg, #1c0602 0%, #cc3014 0%, #870200 100%);
+  transition: 0.3s;
 }
 
 button#cifrar:hover {
   background: linear-gradient(135deg, #1d0602 0%, #df3416 0%, #8f0200 100%);
+  transition: 0.3s;
 }
 
 button#cifrar:active {
   background: linear-gradient(135deg, #130401 0%, #95230f 0%, #610200 100%);
+  transition: 0.3s;
 }
 
 button#resetCifrar,
-button#resetDescifrar {
+button#resetDescifrar,
+button#copiarCifrado,
+button#copiarDescifrado {
   margin-top: 5px;
   box-shadow: 0px 1px 4px 0px #130401a8;
   border-radius: 10px;
   width: -webkit-fill-available;
 }
 
-button#resetCifrar {
-  background: #0f506b;
+button#resetCifrar, button#resetDescifrar {
+  background: #338A74;
 }
+
+button#copiarCifrado, button#copiarDescifrado {
+  background: #d46d28;}
 
 .btn {
   cursor: pointer;
@@ -150,16 +176,27 @@ span {
   padding: 2em 1em;
 }
 .modal {
-  width: 50%;
-  height: 50%;
-  background: #fff;
+  width: 88vmin;
+  height: 25vmin;
+  background: #F2F4F7;
+  color: #323031;
+  font-size: xx-large;
   position: absolute;
+  border-radius: 10px;
   z-index: 5;
   margin: 0 auto;
   left: 0;
   right: 0;
-  top: 0%;
+  top: 4%;
 }
+
+#error i {
+  font-size: 1.6em;
+}
+#error p {
+  margin-bottom: 20px;
+}
+
 .overlay {
   background: #000;
   opacity: 0.5;
@@ -184,7 +221,7 @@ span {
   appearance: none;
   width: 50%;
   height: 5px;
-  background: #fff23d;
+  background: #819FAC;
   outline: 0;
   opacity: 0.7;
   -webkit-transition: 0.2s;
@@ -199,14 +236,14 @@ span {
   appearance: none;
   width: 15px;
   height: 15px;
-  background: #9b2915;
+  background: #FFC730;
   cursor: pointer;
   border-radius: 1em/5em;
 }
 .slider::-moz-range-thumb {
   width: 15px;
   height: 15px;
-  background: #9b2915;
+  background: #FFC730;
   cursor: pointer;
   border-radius: 1em/5em;
 }
