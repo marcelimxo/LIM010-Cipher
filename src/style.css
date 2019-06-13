@@ -162,15 +162,37 @@ span {
 	background-color: rgb(139, 40, 23);
 }
 
+#pasword-cnt{
+	position: relative;
+}
+
+#eye {
+    position: absolute;
+    color: #111f4dab;
+    right: 0;
+    left: 45%;
+    top: 10px;
+    cursor: pointer;
+}
+
+.eyeAct{
+	color:#9b2915 !important;
+}
+
+input#pswrd:focus, input#pswrd:active {
+    border-bottom-color: #9b2915;
+}
+
 #login input {
-	font-family: "Roboto";
-	display: block;
-	border-radius: 5px;
-	font-size: 1em;
-	background-color: white;
-	width: 50%;
-	border: 0;
-	padding: 10px 10px;
+    font-family: "Roboto";
+    display: block;
+    border-radius: 5px;
+    font-size: 1em;
+    width: 50%;
+    border: none;
+    outline: none;
+    border-bottom: 2px solid #111f4dab;
+    padding: 10px 10px;
 	margin: 0 auto;
 }
 

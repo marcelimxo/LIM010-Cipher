@@ -44,17 +44,19 @@ const check = e => {
 
 form.addEventListener("submit", check);
 
-/* mostrar y ocultar contraseña
-const login = document.getElementById("login");
+// mostrar y ocultar contraseña
 
-const toggle_pswrd = (e) => {
-  const loginT = e.target;
+const eye = document.getElementById('eye');
+
+const togglePswrd = ()=>{
   
-  if(loginT.)
+  eye.classList.toggle('eyeAct');
 
-}; 
+  (pswrd.type === 'password') ? pswrd.type = 'text' : pswrd.type = 'password';
 
-login.addEventListener("click", toggle_pswrd, false); */
+};
+
+eye.addEventListener('click',togglePswrd);
 
 //opciones
 const options = document.getElementById("options");

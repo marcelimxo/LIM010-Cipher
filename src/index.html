@@ -25,8 +25,13 @@
 
           <form name="login" id="form">
             <label for="pswrd"> Ingresa tu contraseña secreta </label> <br> <br>
-            <input type="password" name="pswrd" id="pswrd" placeholder="Tu contraseña"
-              autocomplete="current-password"><span class="far fa-eye" id="ojo"></span><br>
+
+            <div id="pasword-cnt">
+              <span class="far fa-eye" id="eye"> </span>
+              <input type="password" name="pswrd" id="pswrd" placeholder="Tu contraseña" autocomplete="current-password">
+            </div>
+
+             <br>
             <span class="hide" id="error_pswrd">Error, intenta nuevamente.</span>
             <button type="submit" class="btn" id="checkLogin">Ingresa</button>
 
