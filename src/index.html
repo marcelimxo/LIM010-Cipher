@@ -1,142 +1,263 @@
 <!DOCTYPE html>
 <html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Caesar Cipher</title>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Alfa+Slab+One|Roboto|Teko&display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://kit.fontawesome.com/6c4b5b61ea.js"></script>
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+  </head>
 
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Caesar Cipher</title>
-  <link rel="stylesheet" href="style.css" />
-  <link href="https://fonts.googleapis.com/css?family=Alfa+Slab+One|Roboto|Teko&display=swap" rel="stylesheet">
-  <script src="https://kit.fontawesome.com/6c4b5b61ea.js"></script>
-  <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
-</head>
+  <body>
+    <header>
+      <h1 id="title">ACAB CIPHER</h1>
+      <h3 id="description" class="teko">
+        Esta aplicacion te sirve para cifrar noticias o mensajes para evitar la
+        censura
+      </h3>
+    </header>
+    <main>
+      <section id="all">
+        <section id="loginContainer" class="roboto">
+          <div id="login">
+            <form name="login" id="form">
+              <label for="pswrd"> Ingresa tu contraseña secreta </label> <br />
+              <br />
 
-<body>
-  <header>
-    <h1 id="title">ACAB CIPHER</h1>
-    <h3 id="description" class="teko"> Esta aplicacion te sirve para cifrar noticias o mensajes para evitar la censura
-    </h3>
-  </header>
-  <main>
-    <section id="all">
-      <section id="loginContainer" class="roboto">
+              <div id="pasword-cnt">
+                <span class="far fa-eye" id="eye"> </span>
+                <input
+                  type="password"
+                  name="pswrd"
+                  id="pswrd"
+                  placeholder="Tu contraseña"
+                  autocomplete="current-password"
+                />
+              </div>
 
-        <div id="login">
+              <br />
+              <span class="hide" id="error_pswrd"
+                >Error, intenta nuevamente.</span
+              >
+              <button type="submit" class="btn" id="checkLogin">Ingresa</button>
+            </form>
 
-          <form name="login" id="form">
-            <label for="pswrd"> Ingresa tu contraseña secreta </label> <br> <br>
+            <div id="error" class="modal hide">
+              <p>
+                Ya utilizaste todos tus intentos, en este momento no podrás
+                ingresar.
+              </p>
+              <i class="far fa-frown"></i>
+            </div>
+            <div id="overlay" class="overlay hide"></div>
+          </div>
+        </section>
 
-            <div id="pasword-cnt">
-              <span class="far fa-eye" id="eye"> </span>
-              <input type="password" name="pswrd" id="pswrd" placeholder="Tu contraseña" autocomplete="current-password">
+        <div id="op" class="flex hide">
+          <label for="options" class="roboto"> ¿Qué quieres hacer? </label>
+          <select id="options" class="roboto">
+            <option value="" disabled selected>Elige</option>
+            <option value="Cifrar" id="cifrar_op">Cifrar</option>
+            <option value="Descifrar" id="descifrar_op">Descifrar</option>
+          </select>
+        </div>
+
+        <section id="cifrando" class="hide">
+          <div id="slideCifrar" class="flex">
+            <label class="roboto"> Indica el nivel de cifrado </label>
+            <div class="slideContainer">
+              <input
+                id="rangeCifrar"
+                type="range"
+                min="1"
+                max="99"
+                value="1"
+                class="slider"
+              />
+              <input id="numCifrar" type="number" min="1" max="99" value="1" />
+            </div>
+          </div>
+
+          <div id="cifrarTextArea" class="flex">
+            <div class="newText">
+              <label for="cifrar" class="roboto">Ingresa tu texto aquí</label>
+              <br />
+              <textarea
+                id="textoCifrar"
+                name="cifrar"
+                placeholder="Escribe aquí"
+                class="texto"
+              ></textarea>
+              <br />
+              <button class="btn" type="reset" id="resetCifrar">
+                <i class="fas fa-redo-alt"></i> reset
+              </button>
             </div>
 
-             <br>
-            <span class="hide" id="error_pswrd">Error, intenta nuevamente.</span>
-            <button type="submit" class="btn" id="checkLogin">Ingresa</button>
+            <div class="btnAction">
+              <button class="btn" type="submit" id="cifrar">
+                <i class="fas fa-lock"></i> <br />
+                Cifrar
+              </button>
+            </div>
 
-          </form>
+            <div class="textResult">
+              <label for="cifrarResultado" class="roboto"
+                >Tu mensaje cifrado</label
+              >
+              <br />
+              <textarea
+                id="textoResultadoCifrar"
+                name="cifrarResultado"
+                placeholder="Tu resultado"
+                class="texto"
+                readonly
+              ></textarea>
+              <br />
+              <button type="button" class="btn" id="copiarCifrado">
+                <i class="far fa-copy"></i> copiar</button
+              ><br />
+              <span class="hide roboto" id="copiarCifrado_span"
+                >¡Copiado con exito!</span
+              >
+            </div>
 
-          <div id="error" class="modal hide">
-            <p> Ya utilizaste todos tus intentos, en este momento no podrás ingresar. </p>
-            <i class="far fa-frown"></i>
           </div>
-          <div id="overlay" class="overlay hide"></div>
-        </div>
+
+          <button class="btn btn-fin" id="salirCifrar">
+            <i class="fas fa-sign-out-alt"></i> Salir
+          </button>
+
+        </section>
+
+        <section id="descifrando" class="hide">
+          <div id="slideDescifrar" class="flex">
+            <label class="roboto"> Indica el nivel de descifrado </label>
+            <div class="slideContainer">
+              <input
+                id="rangeDescifrar"
+                type="range"
+                min="1"
+                max="99"
+                value="1"
+                class="slider"
+              />
+              <input
+                id="numDescifrar"
+                type="number"
+                min="1"
+                max="99"
+                value="1"
+              />
+            </div>
+          </div>
+
+          <div id="descifrarTextArea" class="flex">
+            <div class="newText">
+              <label for="descifrar" class="roboto"
+                >Ingresa tu texto aquí</label
+              >
+              <br />
+              <textarea
+                id="textoDescifrar"
+                name="descifrar"
+                placeholder="Escribe aquí"
+                class="texto"
+              ></textarea>
+              <br />
+              <button class="btn" type="reset" id="resetDescifrar">
+                <i class="fas fa-redo-alt"></i> reset
+              </button>
+            </div>
+
+            <div class="btnAction">
+              <button class="btn" type="submit" id="descifrar">
+                <i class="fas fa-unlock"></i> <br />
+                Descifrar
+              </button>
+            </div>
+
+            <div class="textResult">
+              <label for="descifrarResultado" class="roboto"
+                >Tu mensaje descifrado</label
+              >
+              <br />
+              <textarea
+                id="textoResultadoDescifrar"
+                name="descifrarResultado"
+                placeholder="Tu resultado"
+                class="texto"
+                readonly
+              ></textarea>
+              <br />
+              <button class="btn" type="button" id="copiarDescifrado">
+                <i class="far fa-copy"></i> copiar</button
+              ><br />
+              <span class="hide roboto" id="copiarDescifrado_span"
+                >¡Copiado con exito!</span
+              >
+            </div>
+          </div>
+
+          <button class="btn btn-fin" id="salirDescifrar">
+            <i class="fas fa-sign-out-alt"></i> Salir
+          </button>
+        </section>
+
+        <article id="final" class="hide roboto">
+          <h3 id="title-final">
+            ¡Gracias por utilizar ACAB CIPHER: All Chavistas Are Bad!
+          </h3>
+
+          <img
+            src="https://mi621.files.wordpress.com/2015/09/censored.jpg"
+            alt="Mujer con una venda en la boca que dice 'censura' y una bandera de Venezuela detrás"
+          />
+
+          <p>La censura le impide a la gente estar informada.</p>
+          <p>
+            El monitoreo de las redes sociales y sitios web de noticias son
+            prácticas usadas por gobiernos totalitarios para controlar a la
+            población y así censurar información en línea. <br />
+            La libertad de los usuarios es una amenaza en su esquema de
+            represión, así que el campo digital es un escenario de resistencia.
+          </p>
+
+          <blockquote>
+            En Venezuela, los agentes represores y simpatizantes con el régimen
+            se hacen llamar chavistas, de ahí nace el nombre.
+          </blockquote>
+          <p>
+            Puedes informarte sobre la censura en
+            <a href="https://es.wikipedia.org/wiki/Censura_en_Venezuela"
+              >Wikipedia</a
+            >
+            y tener algo de contexto sobre la dictadura en Venezuela, leyendo
+            este
+            <a
+              href="https://hipertextual.com/2016/06/cambiar-la-ley-electoral-no-serviria-de-nada"
+              >artículo</a
+            >.
+          </p>
+        </article>
       </section>
-
-      <div id="op" class="flex hide">
-        <label for="options" class="roboto"> ¿Qué quieres hacer? </label>
-        <select id="options" class="roboto">
-          <option value="" disabled selected>Elige</option>
-          <option value="Cifrar" id="cifrar_op">Cifrar</option>
-          <option value="Descifrar" id="descifrar_op">Descifrar</option>
-        </select>
-      </div>
-
-      <section id="cifrando" class="hide">
-
-        <div id="slideCifrar" class="flex">
-          <label class="roboto"> Indica el nivel de cifrado </label>
-          <div class="slideContainer">
-            <input id="rangeCifrar" type="range" min="1" max="99" value="1" class="slider">
-            <input id="numCifrar" type="number" min="1" max="99" value="1">
-          </div>
-
-        </div>
-
-        <div id="cifrarTextArea" class="flex">
-
-          <div class="newText">
-            <label for="cifrar" class="roboto">Ingresa tu texto aquí</label> <br>
-            <textarea id="textoCifrar" name="cifrar" placeholder="Escribe aquí" class="texto"></textarea> <br>
-            <button class="btn" type="reset" id="resetCifrar"> <i class="fas fa-redo-alt"></i> reset </button>
-          </div>
-
-          <div class="btnAction">
-            <button class="btn" type="submit" id="cifrar"> <i class="fas fa-lock"></i> <br> Cifrar </button>
-          </div>
-
-          <div class="textResult">
-            <label for="cifrarResultado" class="roboto">Tu mensaje cifrado</label> <br>
-            <textarea id="textoResultadoCifrar" name="cifrarResultado" placeholder="Tu resultado" class="texto"
-              readonly></textarea>
-            <br>
-            <button type="button" class="btn" id="copiarCifrado"> <i class="far fa-copy"></i> copiar </button><br>
-            <span class="hide roboto" id="copiarCifrado_span">¡Copiado con exito!</span>
-
-          </div>
-
-        </div>
-
-      </section>
-
-      <section id="descifrando" class="hide">
-
-        <div id="slideDescifrar" class="flex">
-          <label class="roboto"> Indica el nivel de descifrado </label>
-          <div class="slideContainer">
-            <input id="rangeDescifrar" type="range" min="1" max="99" value="1" class="slider">
-            <input id="numDescifrar" type="number" min="1" max="99" value="1">
-          </div>
-
-        </div>
-
-        <div id="descifrarTextArea" class="flex">
-
-          <div class="newText">
-            <label for="descifrar" class="roboto">Ingresa tu texto aquí</label> <br>
-            <textarea id="textoDescifrar" name="descifrar" placeholder="Escribe aquí" class="texto"></textarea> <br>
-            <button class="btn" type="reset" id="resetDescifrar"> <i class="fas fa-redo-alt"></i> reset </button>
-          </div>
-
-          <div class="btnAction">
-            <button class="btn" type="submit" id="descifrar"> <i class="fas fa-unlock"></i> <br> Descifrar </button>
-          </div>
-
-          <div class="textResult">
-            <label for="descifrarResultado" class="roboto">Tu mensaje descifrado</label> <br>
-            <textarea id="textoResultadoDescifrar" name="descifrarResultado" placeholder="Tu resultado" class="texto"
-              readonly></textarea>
-            <br>
-            <button class="btn" type="button" id="copiarDescifrado"> <i class="far fa-copy"></i> copiar </button><br>
-            <span class="hide roboto" id="copiarDescifrado_span">¡Copiado con exito!</span>
-
-          </div>
-
-        </div>
-
-      </section>
-    </section>
-    <footer>
-      <p class="teko" id="footer">Hecho por Marcelim Rondón <a href="https://twitter.com/marcelimxo"
-          target="_blank"><img src="http://fc00.deviantart.net/fs70/f/2011/350/c/6/ditto_yay_by_tioluko-d4jaqe3.gif"
-            alt="television"></a>
-      </p>
-    </footer>
-  </main>
-  <script src="cipher.js"></script>
-  <script src="index.js"></script>
-</body>
-
+      <footer>
+        <p class="teko" id="footer">
+          Hecho por Marcelim Rondón
+          <a href="https://twitter.com/marcelimxo" target="_blank"
+            ><img
+              src="http://fc00.deviantart.net/fs70/f/2011/350/c/6/ditto_yay_by_tioluko-d4jaqe3.gif"
+              alt="television"
+          /></a>
+        </p>
+      </footer>
+    </main>
+    <script src="cipher.js"></script>
+    <script src="index.js"></script>
+  </body>
 </html>
