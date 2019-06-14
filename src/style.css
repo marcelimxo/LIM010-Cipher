@@ -8,6 +8,10 @@ h1 {
   font-weight: lighter;
 }
 
+/* Clases nuevas :-( */
+
+/* Clases nuevas :-( */
+
 #final {
   width: 65%;
   margin: 0 auto;
@@ -33,11 +37,12 @@ h1 {
   float: right;
 }
 
-#final a{
+#final a {
   color: #e9d85b;
 }
 
-#final blockquote, a {
+#final blockquote,
+a {
   text-shadow: 0px 1px 5px #272424;
   font-style: oblique;
   line-height: 22px;
@@ -125,17 +130,17 @@ button#descifrar:hover {
   transition: 0.3s;
 }
 
-button#cifrar {
+.btn-cipher {
   background: linear-gradient(135deg, #1c0602 0%, #cc3014 0%, #870200 100%);
   transition: 0.3s;
 }
 
-button#cifrar:hover {
+.btn-cipher:hover {
   background: linear-gradient(135deg, #1d0602 0%, #df3416 0%, #8f0200 100%);
   transition: 0.3s;
 }
 
-button#cifrar:active {
+.btn-cipher:active {
   background: linear-gradient(135deg, #130401 0%, #95230f 0%, #610200 100%);
   transition: 0.3s;
 }
