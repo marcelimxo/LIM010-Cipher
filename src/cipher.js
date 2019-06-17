@@ -31,9 +31,9 @@ window.cipher = {
     stringArr.forEach(letra => {
       let isLower = false;
 
-      const check_letter = letra.charCodeAt();
+      const checkLetter = letra.charCodeAt();
 
-      if (check_letter >= 97 && check_letter <= 122) {
+      if (checkLetter >= 97 && checkLetter <= 122) {
         isLower = true;
       }
 
@@ -43,7 +43,7 @@ window.cipher = {
 
       if (isLower) {
         solved += String.fromCharCode(code).toLowerCase();
-      } else if (check_letter === 32) {
+      } else if (checkLetter === 32) {
         solved += ' ';
       } else {
         solved += String.fromCharCode(code);

@@ -8,8 +8,52 @@ h1 {
   font-weight: lighter;
 }
 
+header {
+  font-size: 1.7em;
+}
+
 /* Clases nuevas :-( */
 
+.line-height {
+  letter-spacing: 0.1em;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.width-100 {
+  width: 100%;
+}
+
+.width-50 {
+  width: 50%;
+}
+
+.margin-0-auto {
+  margin: 0 auto;
+}
+
+.margin-top-10 {
+  margin-top: 10px;
+}
+
+.border-radius-10 {
+  border-radius: 10px;
+}
+
+.padding-cnt {
+  padding: 40px 30px 30px 30px;
+}
+
+.position-relative{
+  position: relative;
+
+}
+
+.oxford-blue-bg {
+  background: #111f4d;
+}
 /* Clases nuevas :-( */
 
 #final {
@@ -49,12 +93,9 @@ a {
 }
 
 main {
-  position: relative;
   min-height: 55vh;
 }
-#all {
-  padding-bottom: 2.5rem;
-}
+
 footer {
   width: 100%;
   position: absolute;
@@ -67,11 +108,6 @@ footer {
   color: deepskyblue;
 }
 
-header {
-  font-size: 1.7em;
-  text-align: center;
-  letter-spacing: 0.1em;
-}
 .teko {
   font-family: Teko, sans-serif;
   font-size: 1em;
@@ -183,16 +219,6 @@ button#copiarDescifrado {
 span {
   font: size 0.9em;
 }
-#loginContainer {
-  width: 100%;
-}
-#login {
-  width: 50%;
-  margin: 0 auto;
-  background: #111f4d;
-  padding: 40px 30px 30px 30px;
-  border-radius: 10px;
-}
 
 #checkLogin {
   margin-top: 10px;
@@ -210,11 +236,7 @@ span {
   background-color: rgb(139, 40, 23);
 }
 
-#pasword-cnt {
-  position: relative;
-}
-
-#eye {
+.eye {
   position: absolute;
   color: #111f4dab;
   right: 0;

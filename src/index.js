@@ -1,7 +1,7 @@
 //const checkLogin = document.getElementById('checkLogin');
 const pswrd = document.getElementById("pswrd");
 const form = document.getElementById("form");
-const correct_pswrd = "LABORATORIA";
+const correctPswrd = "LABORATORIA";
 
 const opt = document.getElementById("op");
 const encodeSection = document.getElementById("cifrando");
@@ -14,7 +14,7 @@ const check = e => {
   //con preventDefault evito que el form haga cosas por defecto en el submit, como por ejemplo, agregar los valores en la url
   e.preventDefault();
   if (pswrd.value.length > 0) {
-    if (pswrd.value === correct_pswrd) {
+    if (pswrd.value === correctPswrd) {
       const loginContainer = document.getElementById("loginContainer");
       loginContainer.remove();
       const description = document.getElementById("description");
@@ -26,8 +26,8 @@ const check = e => {
       if (fails < 2) {
         // si tiene menos de 3 intentos entra aqui
 
-        const error_pswrd = document.getElementById("error_pswrd");
-        error_pswrd.classList.replace("hide", "show");
+        const errorPswrd = document.getElementById("error-pswrd");
+        errorPswrd.classList.replace("hide", "show");
 
         // borramos la data del input
         pswrd.value = "";
@@ -124,7 +124,7 @@ btnCopiarCifrado.addEventListener("click", () => {
   textoResultadoCifrar.select();
   document.execCommand("Copy");
 
-  const copiar = document.getElementById("copiarCifrado_span");
+  const copiar = document.getElementById("copiarCifrado-span");
   copiar.classList.toggle("hide");
 });
 
@@ -184,7 +184,7 @@ btnCopiarDescifrado.addEventListener("click", () => {
   textoResultadoDescifrar.select();
   document.execCommand("Copy");
 
-  const copiar = document.getElementById("copiarDescifrado_span");
+  const copiar = document.getElementById("copiarDescifrado-span");
   copiar.classList.toggle("hide");
 });
 
